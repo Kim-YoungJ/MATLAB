@@ -1,0 +1,235 @@
+Matlab Functions 
+
+- Prime factor
+factor()
+
+- colon 
+>> 1:2:10 
+>> x(1:2:end,:) 
+
+- random
+rand()
+randn()
+randperm()
+randi()
+
+- gcd, lcm
+gcd(), lcm()
+
+- remainder after division
+rem()
+
+- prime number
+isprime()
+primes
+
+-permutations
+perms
+
+- trignometric
+rad2deg
+deg2rad
+sin
+asin
+sind
+asind
+...
+
+- intersect(값의 교집합)
+[C,ia] = intersect(x,y) 
+[a,b] = intersect(x,y,'rows')
+
+- union(값의 차집합)
+union(x,y) 
+union(x,z, 'rows')
+setdiff(x,z,'rows')  
+
+- statistics of the matrices
+min()
+max()
+mean()
+var()
+sum()
+median()
+prctile()
+mode()
+min(min())
+
+- cross dot product
+dot()
+cross()
+
+- logical operation
+logical()
+and()
+or()
+not()
+
+- sign and absolute
+sign()
+abs()
+
+- converting numbers different bases
+dec2base()
+base2dec()
+dec2base(300,2) 
+base2dec('ff',16) 
+base2dec('10000',2) 
+
+- discretizing data (relative bin)
+discretize(data,edges,'Included', 'right')
+
+- unique elements
+unique()
+
+- membership of elements
+ismember()
+isequal()
+
+- inverse&determinant&diagnal
+det()
+inv()
+diag()
+
+-relations operation
+ge() -> >=
+gt() -> >
+le() -> <=
+lt() -> <
+ne() -> ~=
+
+- Matrices
+zeros()
+ones()
+magic()
+sort()
+size()
+length()
+strlength()
+find()
+tabulate()
+
+- Graphics 
+input()
+disp()
+menu('Select Courses,','Matlab', 'c++', 'Java')
+fprintf()
+plot(), title(), xlabel(), ylabel(), hold(), scatter(), bar(), barh(), yyaxis left, yyaxis right
+plot3(), stem3(), impz() 
+subplot()
+exist ___
+
+cf)animated line
+h = animatedline; 
+x = 1:1000; 
+y = sin(x); 
+for i=1:length(x)
+	addpoints(h,x(i),y(i)); 
+	drawnow;
+end 
+
+
+- Manipulating Directory 
+cd 
+dir 
+rmdir
+movefile
+what
+
+-processing a text file
+fileread()
+string()
+splitlines()
+replace()
+strip()
+joint()
+split()
+
+- importing data
+csvread()
+dlmread()
+
+- functions
+save with the same name as that of the function name and with .m extention
+
+function [standard_dev, variance, minimum, maximum] = statistics_of_data(a,b) 
+d = [a;b]; 
+standard_dev = std(d);
+variance = var(d);
+mininum = min(d);
+maximum = max(d);
+end 
+
+- Publish 
+when you submit your report clearly sounds.
+
+===============
+ Other Data types 
+===============
+- Cell 
+Cell is can defined by other data types instaneoueous.
+using bracket & similar syntex of matrix
+cellplot()
+
+-Tables 
+table(data, ...., 'VariableNames' or 'RowNames',{   })
+name of table.Properties.RowNames = ___
+Properties.VaraibleDescriptions
+summary()
+sortrows()
+readtable()
+writetable()
+rmmissing()
+
+cf) storing summary of a table
+>> summary(T) 
+>> X = evalc('summary(T)')
+>> fid = fopen('D:\summary.txt','w')
+>> fprintf(fid,'%s',X)
+>> fclose(fid) 
+
+- Struct
+ex) struct('dateofbirth','','Age',{},'Grades',{})
+     student(1).dateofbirth = '2000-12-5'
+rmfield()
+combined -> using [a,b] like this
+isstruct()
+isfield()
+
+- Containers
+like dictionary in python
+mycont = containers.Map({'jan','feb','march'}, {1 2 3})
+keys()    --> in upper Ex) will be {'jan','feb','march'}
+values()  --> in upper Ex) will be {1} {2} {3}
+isKey()
+remove()
+combine --> using [a,b] like this
+
+- Data conversion 
+cellstr()
+table2cell()
+struct2cell()
+cell2table()
+cell2struct()
+struct2table()
+table2struct()
+num2str()
+str2num()
+
+=====================
+APP Designer
+=====================
+when you want to make GUI, use appdesigner in MATLAB
+
+entering appdesigner
+-> write appdesigner 
+
+when plot using code like this : plot(app.UIAxes,x,y);
+
+[filename pathname] = uigetfile({'*.txt'}, 'File Selector'); 
+fullpathname = strcat(pathname,filename);
+text = fileread(fullpathname); 
+app.EditField.Value = filename; 
+app.EditField.Value = text; 
+
+
